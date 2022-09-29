@@ -44,6 +44,7 @@ local options = {
   -- github commit messages
   vim.g.blamer_enabled = 1
   vim.g.blamer_prefix = ' > '
+  vim.g.cursorhold_updatetime = 100
   vim.cmd "set whichwrap+=<,>,[,],h,l"
   vim.cmd [[set iskeyword+=-]]
   vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

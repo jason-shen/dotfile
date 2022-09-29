@@ -70,6 +70,7 @@ return packer.startup(function(use)
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp") -- lsp compections
   use("hrsh7th/cmp-nvim-lua") -- lua compections
+  use("antoinemadec/FixCursorHold.nvim")
   -- snippets
   use("L3MON4D3/LuaSnip") --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
@@ -94,6 +95,7 @@ return packer.startup(function(use)
   use("simrat39/rust-tools.nvim") -- rust tools
   use("Saecki/crates.nvim")
   use("glepnir/lspsaga.nvim") -- LSP UIs
+  --[[ use("folke/trouble.nvim") ]]
   -- Treesitter
   use({
     "nvim-treesitter/nvim-treesitter",
@@ -106,10 +108,10 @@ return packer.startup(function(use)
   -- Git
   use("lewis6991/gitsigns.nvim")
   use("APZelos/blamer.nvim")
-  --[[ use({ ]]
-  --[[   "kosayoda/nvim-lightbulb", ]]
-  --[[   requires = "antoinemadec/FixCursorHold.nvim", ]]
-  --[[ }) ]]
+  -- use({
+  --   "kosayoda/nvim-lightbulb",
+  --   requires = "antoinemadec/FixCursorHold.nvim",
+  -- })
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()

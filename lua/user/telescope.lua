@@ -3,11 +3,11 @@ if not status_ok then
   return
 end
 
-telescope.load_extension('media_files')
+telescope.load_extension("media_files")
 
-local actions = require "telescope.actions"
-
-telescope.setup {
+local actions = require("telescope.actions")
+--[[ local trouble = require("trouble.providers.telescope") ]]
+telescope.setup({
   defaults = {
 
     prompt_prefix = " ",
@@ -44,6 +44,7 @@ telescope.setup {
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+        --[[ ["<c-t>"] = trouble.open_with_trouble, ]]
       },
 
       n = {
@@ -76,6 +77,7 @@ telescope.setup {
         ["<PageDown>"] = actions.results_scrolling_down,
 
         ["?"] = actions.which_key,
+        --[[ ["<c-t>"] = trouble.open_with_trouble, ]]
       },
     },
   },
@@ -90,15 +92,16 @@ telescope.setup {
   },
   extensions = {
     media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = {"png", "webp", "jpg", "jpeg"},
-        find_cmd = "rg" -- find command (defaults to `fd`)
-      }
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = { "png", "webp", "jpg", "jpeg" },
+      find_cmd = "rg", -- find command (defaults to `fd`)
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
   },
-}
+})
+
