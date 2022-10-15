@@ -104,7 +104,7 @@ return packer.startup(function(use)
   use("p00f/nvim-ts-rainbow")
   -- Automatically set up your configuration after cloning packer.nvim
   use("JoosepAlviste/nvim-ts-context-commentstring")
-
+  use("github/copilot.vim")
   -- Git
   use("lewis6991/gitsigns.nvim")
   use("APZelos/blamer.nvim")

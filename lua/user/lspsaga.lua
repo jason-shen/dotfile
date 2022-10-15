@@ -14,8 +14,9 @@ saga.init_lsp_saga({
     virtual_text = true,
 },
 server_filetype_map = {
-  typescript = 'typescript',
-  javascript = 'javascript',
+  typescript = {'typescript'},
+  javascript = {'javascript'},
+  gopls = {'go'},
 }
 })
 

@@ -41,6 +41,11 @@ lsp_installer.on_server_ready(function(server)
 		opts = vim.tbl_deep_extend("force", vue_opts, opts)
 	end
 
+	if server.name == "dartls" then
+		local dart_opts = require("user.lsp.settings.dartls")
+		opts = vim.tbl_deep_extend("force", dart_opts, opts)
+	end
+
 	-- if server.name == "rust-analyzer" then
 	-- 	local rust_opts = require("user.lsp.settings.rust_analyzer")
 	-- 	opts = vim.tbl_deep_extend("force", rust_opts, opts)
