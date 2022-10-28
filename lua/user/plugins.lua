@@ -87,6 +87,7 @@ return packer.startup(function(use)
       require("telescope").load_extension("live_grep_args")
     end,
   })
+  use("nvim-telescope/telescope-file-browser.nvim")
 
   -- LSP
   use("neovim/nvim-lspconfig") -- enable LSP

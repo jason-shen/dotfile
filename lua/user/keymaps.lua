@@ -72,6 +72,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "sf", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "sw", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+keymap("n", "fb", "<cmd>lua require('telescope').extensions.file_browser.file_browser()<CR>", opts)
 -- keymap("n", "sw", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
 -- keymap("n", "sw", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "sd", "<cmd>Telescope buffers<cr>", opts)
@@ -88,6 +89,12 @@ keymap('', '<c-.>', '<Cmd>BufferLineCloseRight<CR>', {})
 
 -- code fold
 keymap('', '<leader><down>', '<Esc>zf<down>', {})
+
+-- move code 
+keymap('n', '<leader>k', ':m .-2<CR>==', {})
+keymap('n', '<leader>j', ':m .+1<CR>==', {})
+keymap('v', '<S>k', ':m <-2<CR>gv=gv', {})
+keymap('v', '<S>j', ':m >+1<CR>gv=gv', {})
 
 -- trouble
 -- vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",

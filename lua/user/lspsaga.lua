@@ -13,6 +13,20 @@ saga.init_lsp_saga({
     sign_priority = 20,
     virtual_text = true,
 },
+-- show outline
+show_outline = {
+  win_position = 'right',
+  --set special filetype win that outline window split.like NvimTree neotree
+  -- defx, db_ui
+  win_with = '',
+  win_width = 30,
+  auto_enter = true,
+  auto_preview = true,
+  virt_text = '┃',
+  jump_key = 'o',
+  -- auto refresh when change buffer
+  auto_refresh = true,
+},
 server_filetype_map = {
   typescript = {'typescript'},
   javascript = {'javascript'},
@@ -29,3 +43,5 @@ vim.keymap.set("i", "<C-h>", "<Cmd>Lspsaga signature_help<CR>", opts)
 vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>", opts)
 vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
 vim.keymap.set("n", "ca", "<Cmd>Lspsaga code_action<CR>", opts)
+-- Outline
+vim.keymap.set("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
